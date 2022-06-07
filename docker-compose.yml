@@ -1,12 +1,13 @@
 version: '2'
 services:
     nginx-proxy:
-        container_name: nginx-proxy
+        container_name: nginx_conf-proxy
         image: nginxproxy/nginx-proxy
         ports:
             - "80:80"
         volumes:
             - /var/run/docker.sock:/tmp/docker.sock:ro
+            - $PWD/nginx_conf:/etc/nginx
         depends_on:
             - miniprogram
             - website
@@ -18,13 +19,13 @@ services:
         command:
             - /src/miniprogram
         environment:
-            - VIRTUAL_HOST=xlxj.local.cn
+            - VIRTUAL_HOST=www.miniprogram.xlxj1314.cn
             - VIRTUAL_PORT=8080
     website:
         container_name: website
         image: nginx
         volumes:
-            - $PWD/website:/usr/share/nginx/html
+            - $PWD/website:/usr/share/nginx_conf/html
         environment:
-            - VIRTUAL_HOST=xlxj_static.local.cn
+            - VIRTUAL_HOST=www.xlxj1314.cn
             - VIRTUAL_PORT=80
