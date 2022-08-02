@@ -1,7 +1,21 @@
 package main
 
+import (
+	"log"
+	"miniprogram/server"
+	"miniprogram/util/config"
+	"os"
+)
+
 func main() {
-	if Server.Run() != nil { // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	// 初始化配置
+	rootPath, _ := os.Getwd()
+	if err := config.InitConfig(rootPath); err != nil {
+		log.Fatalf("initConfig err %v", err)
+	}
+
+	logPath := rootPath + "/output.log"
+	if s := server.NewServer(logPath); s.Run() != nil {
 		return
 	}
 }

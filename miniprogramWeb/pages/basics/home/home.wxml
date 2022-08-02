@@ -1,0 +1,19 @@
+<view class="bg-img padding-top-xl flex align-end" style="background-image: url({{backgroudUrl}});height: 1000rpx;">
+    <view class="bg-shadeBottom padding flex-sub">
+        <view class="flex solid-bottom padding align-end">
+            <view class="cu-avatar round lg" wx:for="{{avatar}}" wx:key style="background-image:url({{item.url}});"></view> 
+            <view class="margin-xs">我们已经相爱100天</view>
+        </view>
+    </view>
+</view>
+
+<scroll-view scroll-y class="padding-top:90px">
+  <view class='nav-list'>
+    <navigator open-type="navigate" hover-class='none' url="/pages/basics/{{item.name}}/{{item.name}}" class="nav-li bg-{{item.color}}" wx:for="{{elements}}" wx:key>
+      <view class="nav-title">{{item.title}}</view>
+      <view class="nav-name">{{item.name}}</view>
+      <text class='cuIcon-{{item.icon}}'></text>
+    </navigator>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

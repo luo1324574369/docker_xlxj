@@ -1,5 +1,6 @@
 .idea
 .DS_Store
+miniprogram/config.yaml
 miniprogram/.vscode/
 miniprogram/vendor
 miniprogram/miniprogram
