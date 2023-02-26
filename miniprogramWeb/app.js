@@ -3,18 +3,20 @@ const util = require('utils/util.js')
 //app.js
 App({
     onLaunch: function() {
-        wx.checkSession({
-          success: (res) => {
-            let token = wx.getStorageSync("token")
-            console.log("token:" +　token)
-            if (!token) {
-                _login()
+        util.login()
+
+        wx.getSystemInfo({
+            success: e => {
+              this.globalData.StatusBar = e.statusBarHeight;
+              let capsule = wx.getMenuButtonBoundingClientRect();
+              if (capsule) {
+                   this.globalData.Custom = capsule;
+                  this.globalData.CustomBar = capsule.bottom + capsule.top - e.statusBarHeight + 30;
+              } else {
+                  this.globalData.CustomBar = e.statusBarHeight + 50;
+              }
             }
-          },
-          fail: (res) => {
-            _login()
-          }
-        })
+          })
     },
     globalData: {
       ColorList: [{
@@ -96,28 +98,3 @@ App({
     }
 })
 
-function _login() {
-    wx.login({
-        success(res) {
-            if(res.code) {
-                console.log("code:" +　res.code)
-                wx.request({
-                  url:  util.baseUrl() + 'wxLogin',
-                  method: "GET",
-                  data: {
-                      code: res.code
-                  },
-                  success(res) {
-                      const token = res.data.data.token
-                      wx.setStorageSync("token",token)
-                  }
-                })
-            }else{
-                console.log("err code")
-            }
-        },
-        fail(res) {
-            console.log(res)
-        }
-      })
-}

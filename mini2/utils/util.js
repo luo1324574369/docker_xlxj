@@ -1,28 +1,24 @@
 const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
-}
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : `0${n}`
-}
-
-const baseUrl = n => {
-    return 'https://miniprogram.xlxj1314.cn/'
-}
-
-const defaultAvatarUrl = n => {
-    return 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
-}
-
-const login = code => {
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+    const hour = date.getHours()
+    const minute = date.getMinutes()
+    const second = date.getSeconds()
+  
+    return `${[year, month, day].map(formatNumber).join('/')} ${[hour, minute, second].map(formatNumber).join(':')}`
+  }
+  
+  const formatNumber = n => {
+    n = n.toString()
+    return n[1] ? n : `0${n}`
+  }
+  
+  const baseUrl = n => {
+      return 'https://miniprogram.xlxj1314.cn/'
+  }
+  
+  const login = code => {
     wx.checkSession({
         success: (res) => {
           let token = wx.getStorageSync("token")
@@ -35,7 +31,8 @@ const login = code => {
           _login()
         }
       })
-}
+  }
+
 
 function _login() {
     wx.login({
@@ -63,8 +60,10 @@ function _login() {
       })
 }
 
-module.exports = {
-  formatTime,
-  login,
-  baseUrl
-}
+  
+  module.exports = {
+    formatTime,
+    login,
+    baseUrl
+  }
+  

@@ -1,12 +1,9 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/basics/home/home",
     "pages/basics/news/news",
-    "pages/basics/newInput/newsInput",
-    "pages/basics/setting/setting",
-    "pages/basics/userInfo/userInfo"
+    "pages/basics/news/newsInput",
+    "pages/basics/layout/layout"
   ],
   "window": {
     "navigationBarBackgroundColor": "#39b54a",

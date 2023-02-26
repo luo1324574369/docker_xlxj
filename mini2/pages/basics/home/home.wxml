@@ -1,4 +1,4 @@
-<view class="bg-img padding-top-xl flex align-end" style="background-image: url({{backgroudUrl}});height: 1200rpx;">
+<view class="bg-img padding-top-xl flex align-end" style="background-image: url({{backgroudUrl}});height: 1000rpx;">
     <view class="bg-shadeBottom padding flex-sub">
         <view class="flex solid-bottom padding align-end">
             <view class="cu-avatar round lg" wx:for="{{avatar}}" wx:key style="background-image:url({{item.url}});"></view> 

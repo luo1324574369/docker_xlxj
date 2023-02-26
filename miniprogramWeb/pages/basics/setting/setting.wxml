@@ -1,7 +1,23 @@
-<cu-custom bgColor="bg-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-	<view slot="content">恋爱点滴</view>
-</cu-custom>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <image src="/images/logo.png" class="png" mode="widthFix"></image>
+    <view class="text-xl">设置
+    </view>
+    <view class="margin-top-sm">
+      <text>By:jimiluo</text>
+    </view>
+    <image src="https://raw.githubusercontent.com/weilanwl/ColorUI/master/demo/images/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
 
-<!--pages/basics/setting/setting.wxml-->
-<text>pages/basics/setting/setting.wxml</text>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/basics/userInfo/userInfo" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">头像昵称</text>
+      </navigator>
+    </view>
+
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>
