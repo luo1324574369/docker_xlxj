@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-      "basics": "/pages/basics/home/home",
-      "news": "/pages/basics/news/news",
-      "setting": "/pages/basics/setting/setting"
-    }
-  }

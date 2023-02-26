@@ -1,7 +1,0 @@
-<cu-custom bgColor="bg-pink" isBack="{{true}}">
-    <view slot="backText">返回</view>
-	<view slot="content">恋爱点滴</view>
-</cu-custom>
-
-<!--pages/basics/setting/setting.wxml-->
-<text>pages/basics/setting/setting.wxml</text>
