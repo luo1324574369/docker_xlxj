@@ -4,3 +4,4 @@ miniprogram/config.yaml
 miniprogram/.vscode/
 miniprogram/vendor
 miniprogram/miniprogram
+miniprogram/node_modules
