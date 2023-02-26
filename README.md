@@ -1,6 +1,6 @@
 # 情侣小程序
 
-# 运营平台
+# 运维
 
 - 宝塔 https://www.bt.cn/new/index.html
 
